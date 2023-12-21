@@ -4,8 +4,11 @@ compose-up:
 compose-build:
 	docker-compose build
 
-flake8:
-	docker-compose run --rm app -c "flake8"
+lint:
+	docker-compose run --rm app flake8
+
+test:
+	docker-compose run --rm app python manage.py test
 
 container-run:
 	docker-compose run --rm app
